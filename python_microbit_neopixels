@@ -1,0 +1,14 @@
+from microbit import *
+import random
+import neopixel
+
+while True:
+
+    np = neopixel.NeoPixel(pin0, 30)
+    level = microphone.sound_level() / 255
+    result = int(level * 30)
+
+    for x in range(result):
+        np[x] = (255, 0, 0)
+        np.show()
+    
